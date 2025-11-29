@@ -1,5 +1,71 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Hello World!</h1>
+
+<!-- Первая секция: Основные направления работы -->
+<section class="directions-section">
+    <div class="container">
+        <h2 class="section-title">Основные направления работы</h2>
+        
+        <!-- Swiper -->
+        <div class="swiper directions-swiper">
+            <div class="swiper-wrapper">
+                <!-- Слайд 1: Аутсорсинг печати -->
+                <div class="swiper-slide">
+                    <div class="direction-card">
+                        <div class="direction-image">
+                            <img src="{% static 'img/image 3.png' %}" alt="Аутсорсинг печати">
+                        </div>
+                        <div class="direction-content">
+                            <h3 class="direction-title">Аутсорсинг печати</h3>
+                            <p class="direction-description">
+                                Мы берем на себя все расходы по приобретению оборудования, снижаем эксплуатационные затраты на расходные материалы и сервис, берем на себя все риски, связанные с работой принтеров, включая замену оборудования, если ремонт невозможен.
+                            </p>
+                            <a href="{% url 'print_outsourcing' %}" class="direction-btn">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Слайд 2: IT аутсорсинг -->
+                <div class="swiper-slide">
+                    <div class="direction-card direction-card-reverse">
+                        <div class="direction-image">
+                            <img src="{% static 'img/image 3.png' %}" alt="IT аутсорсинг">
+                        </div>
+                        <div class="direction-content">
+                            <h3 class="direction-title">IT аутсорсинг</h3>
+                            <p class="direction-description">
+                                Полный комплекс услуг по обслуживанию IT-инфраструктуры вашего офиса. Мы обеспечиваем надежную работу всех систем, предоставляем техническую поддержку и гарантируем безопасность данных.
+                            </p>
+                            <a href="{% url 'it_outsourcing' %}" class="direction-btn">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Слайд 3: Программные решения -->
+                <div class="swiper-slide">
+                    <div class="direction-card">
+                        <div class="direction-image">
+                            <img src="{% static 'img/image 3.png' %}" alt="Программные решения">
+                        </div>
+                        <div class="direction-content">
+                            <h3 class="direction-title">Программные решения</h3>
+                            <p class="direction-description">
+                                Разработка и внедрение программного обеспечения под ваши задачи. Мы создаем эффективные решения для автоматизации бизнес-процессов и повышения производительности.
+                            </p>
+                            <a href="{% url 'software_solutions' %}" class="direction-btn">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Пагинация (точки) -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    
+    <!-- Голубая полоса внизу секции -->
+    <div class="section-bottom-strip"></div>
+</section>
+
 {% endblock %}

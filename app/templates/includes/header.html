@@ -1,0 +1,37 @@
+<header class="main-header">
+    <div class="container">
+        <nav class="navbar">
+            <!-- Логотип и название слева -->
+            <div class="navbar-brand">
+                <div class="logo">
+                    <span class="logo-letter logo-t">T</span>
+                    <span class="logo-letter logo-c">C</span>
+                </div>
+                <span class="brand-text">ТехноСервис</span>
+            </div>
+            
+            <!-- Навигация по центру -->
+            <ul class="navbar-nav">
+                <li>
+                    <a href="{% url 'index' %}" class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                        Главная
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Услуги и решения</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Каталог</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">О нас</a>
+                </li>
+            </ul>
+            
+            <!-- Телефон справа -->
+            <div class="navbar-contact">
+                <a href="tel:+74992381551" class="phone-link">+7 (499) 238-15-51</a>
+            </div>
+        </nav>
+    </div>
+</header>
