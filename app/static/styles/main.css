@@ -5,16 +5,27 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 main {
     min-height: calc(100vh - 80px);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Header Styles */
@@ -205,6 +216,9 @@ main {
     background-color: #2d2d2d;
     position: relative;
     padding: 60px 0 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .directions-section .container {
@@ -405,4 +419,391 @@ main {
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 20px;
+}
+
+/* Outsourcing Section */
+.outsourcing-section {
+    background-color: #ffffff;
+    padding: 80px 0 0;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.outsourcing-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.outsourcing-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: 'Arial', sans-serif;
+    text-transform: none;
+}
+
+.outsourcing-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.outsourcing-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outsourcing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.outsourcing-card-reverse {
+    flex-direction: row-reverse;
+}
+
+.outsourcing-card-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.outsourcing-card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.outsourcing-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.outsourcing-card-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ff69b4;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.outsourcing-card-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+.outsourcing-read-more {
+    display: inline-block;
+    color: #ff69b4;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    width: fit-content;
+}
+
+.outsourcing-read-more:hover {
+    color: #ff1493;
+    text-decoration: underline;
+}
+
+/* Responsive for Outsourcing Section */
+@media (max-width: 992px) {
+    .outsourcing-section {
+        padding: 60px 0 30px;
+    }
+    
+    .outsourcing-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .outsourcing-card,
+    .outsourcing-card-reverse {
+        flex-direction: column !important;
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .outsourcing-card-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .outsourcing-card-title {
+        font-size: 24px;
+    }
+    
+    .outsourcing-card-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .outsourcing-section {
+        padding: 40px 0 20px;
+    }
+    
+    .outsourcing-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .outsourcing-cards {
+        gap: 30px;
+    }
+    
+    .outsourcing-card {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .outsourcing-card-title {
+        font-size: 20px;
+    }
+    
+    .outsourcing-card-description {
+        font-size: 14px;
+    }
+    
+    .outsourcing-read-more {
+        font-size: 14px;
+    }
+}
+
+/* Audit Stages Section */
+.audit-stages-section {
+    background-color: #ffffff;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+.audit-stages-section .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* Плашки - начинаются с середины и идут к краям */
+.audit-banner {
+    position: absolute;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    z-index: 100;
+    white-space: nowrap;
+}
+
+/* Плашка "С чего начать?" - начинается с середины, идет к правому краю, выше */
+.audit-banner-right {
+    background-color: #4a4a4a;
+    border-radius: 21px 0 0 21px;
+    left: 35%;
+    right: -20px;
+    top: 20px;
+    padding: 22px 500px 22px 50px;
+}
+
+/* Плашка "Этапы аудита" - начинается с середины, идет к левому краю, ниже, чуть меньше по высоте */
+.audit-banner-left {
+    background-color: #FF5392;
+    border-radius: 0 21px 21px 0;
+    left: -20px;
+    right: 50%;
+    top: 100px;
+    padding: 10px 50px 10px 500px;
+}
+
+/* Контент - этапы слева, фото справа */
+.audit-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* gap: 80px; */
+    margin-top: 150px;
+    padding-bottom: 80px;
+}
+
+.audit-stages-list {
+    flex: 0 0 55%;
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.audit-stage-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 25px 0;
+    align-items: flex-start;
+}
+
+.audit-stage-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff69b4;
+    flex-shrink: 0;
+    line-height: 1.5;
+}
+
+.audit-stage-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333333;
+    flex: 1;
+}
+
+.audit-stage-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #d0d0d0;
+    margin: 0;
+}
+
+.audit-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    margin-left: -200px;
+    margin-top: -200px;
+}
+
+.audit-image img {
+    width: 300%;
+    height: auto;
+    max-width: 900px;
+    object-fit: contain;
+}
+
+/* Responsive for Audit Stages Section */
+@media (max-width: 992px) {
+    .audit-stages-section {
+        padding: 30px 0 60px;
+    }
+    
+    .audit-banner {
+        font-size: 18px;
+        padding: 15px 40px;
+    }
+    
+    .audit-banner-right {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    
+    .audit-banner-left {
+        padding-right: 60px;
+        padding-left: 60px;
+        top: 40px;
+    }
+    
+    .audit-content {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 120px;
+    }
+    
+    .audit-stage-number {
+        font-size: 28px;
+    }
+    
+    .audit-stage-text {
+        font-size: 16px;
+    }
+    
+    .audit-stages-list {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .audit-image {
+        flex: 0 0 100%;
+    }
+    
+    .audit-image img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .audit-stages-section {
+        padding: 20px 0 40px;
+    }
+    
+    .audit-banner {
+        font-size: 16px;
+        padding: 12px 30px;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 15px;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+    }
+    
+    .audit-banner-left {
+        border-radius: 25px 0 0 25px;
+        padding-left: 50px;
+        padding-right: 30px;
+        left: -20px;
+        right: auto;
+    }
+    
+    .audit-banner-right {
+        border-radius: 0 25px 25px 0;
+        padding-right: 50px;
+        padding-left: 30px;
+        right: -20px;
+        left: auto;
+        margin-top: 10px;
+    }
+    
+    .audit-content {
+        margin-top: 20px;
+        gap: 30px;
+    }
+    
+    .audit-stage-item {
+        padding: 20px 0;
+        gap: 15px;
+    }
+    
+    .audit-stage-number {
+        font-size: 24px;
+    }
+    
+    .audit-stage-text {
+        font-size: 15px;
+    }
 }

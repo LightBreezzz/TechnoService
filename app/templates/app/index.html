@@ -35,7 +35,7 @@
                         <div class="direction-content">
                             <h3 class="direction-title">IT аутсорсинг</h3>
                             <p class="direction-description">
-                                Полный комплекс услуг по обслуживанию IT-инфраструктуры вашего офиса. Мы обеспечиваем надежную работу всех систем, предоставляем техническую поддержку и гарантируем безопасность данных.
+                                На сегодня большую популярность набирает аутсорсинг в сфере технологий, в частность в сфере ИТ. И этому есть объяснение
                             </p>
                             <a href="{% url 'it_outsourcing' %}" class="direction-btn">Узнать больше</a>
                         </div>
@@ -51,7 +51,7 @@
                         <div class="direction-content">
                             <h3 class="direction-title">Программные решения</h3>
                             <p class="direction-description">
-                                Разработка и внедрение программного обеспечения под ваши задачи. Мы создаем эффективные решения для автоматизации бизнес-процессов и повышения производительности.
+                                Это простое средство для формирования отчетов и ведения учета упрощает администраторам задачу отслеживания использования устройств
                             </p>
                             <a href="{% url 'software_solutions' %}" class="direction-btn">Узнать больше</a>
                         </div>
@@ -66,6 +66,100 @@
     
     <!-- Голубая полоса внизу секции -->
     <div class="section-bottom-strip"></div>
+</section>
+
+<!-- Вторая секция: Что такое аутсорсинг -->
+<section class="outsourcing-section">
+    <div class="container">
+        <h2 class="outsourcing-title">Что такое аутсорсинг</h2>
+        
+        <div class="outsourcing-cards">
+            <!-- Карточка 1: IT Аутсорсинг -->
+            <div class="outsourcing-card">
+                <div class="outsourcing-card-image">
+                    <img src="{% static 'img/image 3.png' %}" alt="IT Аутсорсинг">
+                </div>
+                <div class="outsourcing-card-content">
+                    <h3 class="outsourcing-card-title">ІТ Аутсорсинг</h3>
+                    <p class="outsourcing-card-description">
+                        ІТ-аутсорсинг. Что это? И что с ним делать! Большинство предприятий имеет собственные компьютерные сети. Но зачастую случается так, что компьютерное оборудование выходит из строя, и это вполне естественно — ведь ничего не вечно в...
+                    </p>
+                    <a href="{% url 'it_outsourcing' %}" class="outsourcing-read-more">Читать далее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка 2: Аутсорсинг печати -->
+            <div class="outsourcing-card">
+                <div class="outsourcing-card-content">
+                    <h3 class="outsourcing-card-title">Аутсорсинг печати</h3>
+                    <p class="outsourcing-card-description">
+                        Печать — теперь неотъемлемая часть расходов как крупных, так и небольших компаний. Обслуживание техники, картриджи, бумага — все это требует значительных затрат. Наступление эры интернета не послужило импульсом к уменьшению масштабов печати.
+                    </p>
+                    <a href="{% url 'print_outsourcing' %}" class="outsourcing-read-more">Читать далее</a>
+                </div>
+                <div class="outsourcing-card-image">
+                    <img src="{% static 'img/image 3.png' %}" alt="Аутсорсинг печати">
+                </div>
+            </div>
+            
+            <!-- Карточка 3: Программные решения -->
+            <div class="outsourcing-card">
+                <div class="outsourcing-card-image">
+                    <img src="{% static 'img/image 3.png' %}" alt="Программные решения">
+                </div>
+                <div class="outsourcing-card-content">
+                    <h3 class="outsourcing-card-title">Программные решения</h3>
+                    <p class="outsourcing-card-description">
+                        Теперь пользователи МФУ фирмы RICOH имеют возможность установить решение MyQ непосредственно в аппарат, без использования внешних терминалов. Програмное обеспечение заливается в аппарат на Java карту и выглядит следующим образом: Такое решение...
+                    </p>
+                    <a href="{% url 'software_solutions' %}" class="outsourcing-read-more">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Третья секция: Этапы аудита -->
+<section class="audit-stages-section">
+    <div class="container">
+        <!-- Плашка "С чего начать?" справа -->
+        <div class="audit-banner audit-banner-right">
+            <span>С чего начать?</span>
+        </div>
+        
+        <!-- Плашка "Этапы аудита" слева -->
+        <div class="audit-banner audit-banner-left">
+            <span>Этапы аудита</span>
+        </div>
+        
+        <!-- Контент: этапы слева, фото справа -->
+        <div class="audit-content">
+            <div class="audit-stages-list">
+                <div class="audit-stage-item">
+                    <span class="audit-stage-number">1.</span>
+                    <span class="audit-stage-text">Аудит. Выявление узких мест и анализ текущих затрат компании.</span>
+                </div>
+                <div class="audit-stage-divider"></div>
+                <div class="audit-stage-item">
+                    <span class="audit-stage-number">2.</span>
+                    <span class="audit-stage-text">Формирование предложения по оптимизации процессов. Формирование технического задания. Формирование проекта и финансового плана.</span>
+                </div>
+                <div class="audit-stage-divider"></div>
+                <div class="audit-stage-item">
+                    <span class="audit-stage-number">3.</span>
+                    <span class="audit-stage-text">Поставка, инсталяция и настройка оборудования. Внедрения ПО. Внедрения политики учета. Тестирование и запуск систем.</span>
+                </div>
+                <div class="audit-stage-divider"></div>
+                <div class="audit-stage-item">
+                    <span class="audit-stage-number">4.</span>
+                    <span class="audit-stage-text">Мониторинг и диагностика процессов и устройств. Профилактика устройств. Поставка расходных материалов и ЗИП. Отчетность, предоставление финансовых документов.</span>
+                </div>
+            </div>
+            <div class="audit-image">
+                <img src="{% static 'img/www-no-bg-preview (carve.photos) 1.png' %}" alt="Этапы аудита">
+            </div>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
