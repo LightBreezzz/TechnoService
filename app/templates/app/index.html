@@ -162,4 +162,31 @@
     </div>
 </section>
 
+<section class="why_we_and_map">
+    <div class="container">
+        <div class="why_we why_we_text">
+            <span>Почему мы?</span>
+        </div>
+
+        <div class="why-card">
+            <div class="why-card-image">
+                <img src="{% static 'img/image 4.png' %}" alt="Почему мы">
+            </div>
+            <div class="why-card-content">
+                <h3 class="why-card-title">ІТ Аутсорсинг</h3>
+                <p class="why-card-description">
+                    ІТ-аутсорсинг. Что это? И что с ним делать! Большинство предприятий имеет собственные компьютерные сети. Но зачастую случается так, что компьютерное оборудование выходит из строя, и это вполне естественно — ведь ничего не вечно в...
+                </p>
+                <a href="{% url 'it_outsourcing' %}" class="why-read-more">Читать далее</a>
+            </div>
+        </div>
+
+        <h2 class="map-title">Филиалы по всей России</h2>
+
+        <div class="map-card-image">
+            <img src="{% static 'img/image 6.png' %}" alt="Карта">
+        </div>
+    </div>
+</section>
+
 {% endblock %}
