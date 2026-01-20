@@ -1,0 +1,43 @@
+{% load static %}
+<div class="wrapper">
+            <header class="main-header">
+            <div class="header container">
+                <a href="{% url 'index' %}" class="logo">
+                    <div class="logo__pin"><img src="{% static 'img/svg/LogoImg.svg' %}" alt=""></div>
+                    <div class="logo__text">
+                        <p class="logo__text-1">ТехноСервис</p>
+                        <p class="logo__text-2">IT Аутсорсинг</p>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="{% url 'services' %}" class="navbar-link">Услуги</a></li>
+                        <li><a  href="#" class="navbar-link">Каталог</a></li>
+                        <li><a  href="#" class="navbar-link">О компании</a></li>
+                        <li><a  href="#" class="navbar-link">Кейсы</a> </li>
+                        <li><a  href="#" class="navbar-link">Контакты</a></li>
+                    </ul>            
+                </nav>
+
+                    
+                <div class="taskbar">           
+                    <a class="contact">
+                        <img src="{% static 'img/svg/IconPhone.svg' %}" class="contact-ico">
+                        <p>+7 (495) 123 45 67</p>
+                    </a>
+
+                    <button class="basket-btn">
+                        <img src="{% static 'img/svg/IconBasket.svg' %}" class="basket-ico">
+                    </button>
+
+                    <button class="burger-btn">
+                        <img src="{% static 'img/svg/burger-menu-img.svg' %}" class="burger-menu-img">
+                    </button>
+
+                    <a class="consultation-btn">
+                        <p>Получить консультацию</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+</div>

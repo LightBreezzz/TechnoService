@@ -1,0 +1,29 @@
+<!-- app/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТехноСервис</title>
+  
+  <!-- Сброс и базовые стили -->
+  <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/variables.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/global.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/services.css' %}">
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+
+
+</head>
+<body>
+  {% include 'includes/header.html' %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  {% include 'includes/footer.html' %}
+</body>
+</html>
