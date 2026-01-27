@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.validators import EmailValidator, RegexValidator
 
 class audit_log(models.Model):
     name = models.CharField("Имя", max_length=255, null=True, blank=True)
