@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import audit_log_form
 from .models import audit_log
+from django.shortcuts import redirect
 
 
 def audit_log_view(request):
