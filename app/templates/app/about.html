@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero__text">
+                <h1 class="about-hero__title">О компании</h1>
+                <p class="about-hero__subtitle">Ваш надежный партнер в области IT-аутсорсинга</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наша история -->
+    <section class="about-history">
+        <div class="container about-history__layout">
+            <div class="about-history__text">
+                <h2 class="about-history__title">Наша история</h2>
+                <p class="about-history__paragraph">
+                    ТехноСервис была основана в 2015 году группой опытных IT-специалистов, которые видели, как малый и средний
+                    бизнес страдает от нестабильной работы IT-инфраструктуры и высоких затрат на её содержание.
+                </p>
+                <p class="about-history__paragraph">
+                    За 10 лет мы выросли от небольшой команды из 5 человек до крупной компании с более чем 50 специалистами,
+                    обслуживающей свыше 200 клиентов в Москве и Московской области.
+                </p>
+                <p class="about-history__paragraph">
+                    Наша миссия — сделать профессиональную IT-поддержку доступной для любого бизнеса, освободив наших клиентов
+                    от технических забот и позволяя сосредоточиться на развитии их компаний.
+                </p>
+            </div>
+            <div class="about-history__image-wrapper">
+                <img src="{% static 'img/Image-tree.png' %}" alt="IT-инфраструктура" class="about-history__image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="about-benefits">
+        <div class="container about-benefits__layout">
+            <div class="about-benefits__item">
+                <div class="about-benefits__number">200+</div>
+                <div class="about-benefits__label">Довольных клиентов</div>
+            </div>
+            <div class="about-benefits__item">
+                <div class="about-benefits__number">10+</div>
+                <div class="about-benefits__label">Лет на рынке</div>
+            </div>
+            <div class="about-benefits__item">
+                <div class="about-benefits__number">50+</div>
+                <div class="about-benefits__label">Специалистов в команде</div>
+            </div>
+            <div class="about-benefits__item">
+                <div class="about-benefits__number">99.9%</div>
+                <div class="about-benefits__label">Uptime SLA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши ценности -->
+    <section class="about-values">
+        <div class="container">
+            <div class="about-values__head">
+                <h2 class="about-values__title">Наши ценности</h2>
+                <p class="about-values__subtitle">
+                    Принципы, которыми мы руководствуемся в работе с каждым клиентом
+                </p>
+            </div>
+            <div class="about-values__grid">
+                <article class="about-values__card">
+                    <div class="about-values__icon">
+                        <img src="{% static 'img/svg/values-1.svg' %}" alt="Профессионализм">
+                    </div>
+                    <h3 class="about-values__card-title">Профессионализм</h3>
+                    <p class="about-values__card-text">
+                        Сертифицированные специалисты с многолетним опытом работы в IT.
+                    </p>
+                </article>
+
+                <article class="about-values__card">
+                    <div class="about-values__icon">
+                        <img src="{% static 'img/svg/values-2.svg' %}" alt="Клиентоориентированность">
+                    </div>
+                    <h3 class="about-values__card-title">Клиентоориентированность</h3>
+                    <p class="about-values__card-text">
+                        Индивидуальный подход и прозрачная коммуникация на всех этапах проекта.
+                    </p>
+                </article>
+
+                <article class="about-values__card">
+                    <div class="about-values__icon">
+                        <img src="{% static 'img/svg/values-3.svg' %}" alt="Надежность">
+                    </div>
+                    <h3 class="about-values__card-title">Надежность</h3>
+                    <p class="about-values__card-text">
+                        SLA-соглашения и строгие внутренние стандарты качества услуг.
+                    </p>
+                </article>
+
+                <article class="about-values__card">
+                    <div class="about-values__icon">
+                        <img src="{% static 'img/svg/values-4.svg' %}" alt="Инновации">
+                    </div>
+                    <h3 class="about-values__card-title">Инновации</h3>
+                    <p class="about-values__card-text">
+                        Современные технологии и лучшие практики для устойчивого роста бизнеса.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наша команда -->
+    <section class="about-team">
+        <div class="container">
+            <div class="about-team__head">
+                <h2 class="about-team__title">Наша команда</h2>
+                <p class="about-team__subtitle">
+                    Профессионалы с многолетним опытом работы в IT
+                </p>
+            </div>
+            <div class="about-team__grid">
+                <article class="about-team__card">
+                    <div class="about-team__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="Александр Петров" class="about-team__image">
+                    </div>
+                    <div class="about-team__info">
+                        <h3 class="about-team__name">Александр Петров</h3>
+                        <p class="about-team__position">Генеральный директор</p>
+                        <p class="about-team__experience">15+ лет на IT-рынке</p>
+                    </div>
+                </article>
+
+                <article class="about-team__card">
+                    <div class="about-team__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="Мария Иванова" class="about-team__image">
+                    </div>
+                    <div class="about-team__info">
+                        <h3 class="about-team__name">Мария Иванова</h3>
+                        <p class="about-team__position">Руководитель отдела аутсорсинга</p>
+                        <p class="about-team__experience">10+ лет в IT</p>
+                    </div>
+                </article>
+
+                <article class="about-team__card">
+                    <div class="about-team__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="Дмитрий Ковалев" class="about-team__image">
+                    </div>
+                    <div class="about-team__info">
+                        <h3 class="about-team__name">Дмитрий Ковалев</h3>
+                        <p class="about-team__position">Технический директор</p>
+                        <p class="about-team__experience">12+ лет в инфраструктурных проектах</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,916 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <section class="catalog-title">
+        <div class="container">
+            <div class="catalog-title__text">
+                <h1 class="catalog-title__h1">Каталог товаров и услуг</h1>
+                <p class="catalog-title__p">Выберите подходящие решения для вашего бизнеса</p>   
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-tabs">
+
+                <a href="{% url 'catalog' %}" class="catalog-tab catalog-tab--active">
+                    <p >Подписки на услуги</p>
+                </a>
+                <a href="{% url 'catalog_printers' %}" class="catalog-tab">
+                    <p>Принтеры и МФУ</p>
+                </a>
+
+            </div>
+
+            <div class="catalog-grid">
+                <!-- Карточка товара (макет для будущей загрузки с бэкенда) -->
+                <article class="catalog-card" data-product-id="demo-1">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="IT Support Базовый" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">IT Support Базовый</h3>
+                        <p class="catalog-card__description">Базовая поддержка IT‑инфраструктуры для малого бизнеса</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>До 10 рабочих мест</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Удаленная поддержка 24/7</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Время реакции: 2 часа</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">15 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-2">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="IT Support Стандарт" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">IT Support Стандарт</h3>
+                        <p class="catalog-card__description">Комплексная поддержка для среднего бизнеса</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>До 50 рабочих мест</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Удаленная поддержка 24/7</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Время реакции: 30 минут</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">35 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-3">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="{% static 'img/Image-tree.png' %}" alt="IT Support Премиум" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">IT Support Премиум</h3>
+                        <p class="catalog-card__description">Максимальная поддержка для крупного бизнеса</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Неограниченное количество мест</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Персональный инженер</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Время реакции: 15 минут</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">75 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-4">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="Печатный аутсорсинг" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Печатный аутсорсинг</h3>
+                        <p class="catalog-card__description">Управление печатным парком компании</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Обслуживание до 10 устройств</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Поставка расходников</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Профилактика и ремонт</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">25 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-5">
+                    <div class="catalog-card__image-wrapper">
+                        {% with image_name="Image-two'" %}
+                        <img src="{% static 'img/MainTeam.png' %}" alt="DataMobile Маркировка" class="catalog-card__image">
+                        {% endwith %}
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">DataMobile Маркировка</h3>
+                        <p class="catalog-card__description">Мобильное решение для работы с маркированным товаром</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Прием и отгрузка маркированного товара</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Интеграция с учетными системами</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Работа с честным знаком</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">199 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-6">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="{% static 'img/MainTeam.png' %}" alt="DataMobile Стандарт" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">DataMobile Стандарт</h3>
+                        <p class="catalog-card__description">Универсальное мобильное решение для склада</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Инвентаризация товаров</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Приемка и отгрузка</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Перемещение между складами</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">89 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="demo-7">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/MainTeam.png" alt="Мониторинг и безопасность" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Мониторинг и безопасность</h3>
+                        <p class="catalog-card__description">Комплексная защита и мониторинг инфраструктуры</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Мониторинг 24/7</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Отчетность и аналитика</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Защита от киберугроз</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">45 000</div>
+                                <div class="catalog-card__price-period">₽/месяц</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Модальные окна для подписок на услуги -->
+
+            <!-- IT Support Базовый -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-1">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">IT Support Базовый</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/MainTeam.png' %}" alt="IT Support Базовый">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">15 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Базовая поддержка IT‑инфраструктуры для малого бизнеса: контроль рабочих мест, решение инцидентов,
+                                    консультации пользователей.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>До 10 рабочих мест</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Удалённая поддержка 24/7</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Время реакции: 2 часа</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Базовое обслуживание серверов</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Резервное копирование</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Подписка на услугу</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">1 месяц</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">24/7</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Support Стандарт -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-2">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">IT Support Стандарт</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/MainTeam.png' %}" alt="IT Support Стандарт">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">35 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Комплексная поддержка IT‑инфраструктуры для растущего бизнеса, включающая проактивный мониторинг
+                                    и управление рабочими станциями.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>До 50 рабочих мест</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Удалённая поддержка 24/7</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Время реакции: 30 минут</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Плановые выезды инженера</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Отчётность по инцидентам</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Подписка на услугу</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">3 месяца</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">24/7</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Support Премиум -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-3">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">IT Support Премиум</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/Image-tree.png' %}" alt="IT Support Премиум">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">75 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Максимальная поддержка IT‑инфраструктуры для крупного бизнеса с персональным менеджером и
+                                    расширенными SLA.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Неограниченное количество рабочих мест</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Персональный инженер и менеджер</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Время реакции: 15 минут</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Проактивный мониторинг инфраструктуры</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Регулярные отчёты и рекомендации</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Подписка на услугу</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">6 месяцев</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">24/7, приоритетный канал</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Печатный аутсорсинг -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-4">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Печатный аутсорсинг</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/MainTeam.png' %}" alt="Печатный аутсорсинг">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">25 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Услуга полного управления парком печатной техники: снабжение расходниками, ремонт, мониторинг
+                                    и оптимизация затрат.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Обслуживание до 10 устройств</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Поставка оригинальных расходников</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Профилактика и ремонт</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Подписка на услугу</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">3 месяца</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">В рабочее время</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DataMobile Маркировка -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-5">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">DataMobile Маркировка</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/MainTeam.png' %}" alt="DataMobile Маркировка">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">199 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Мобильное решение для работы с маркированным товаром и интеграции с системой «Честный знак».
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Приём и отгрузка маркированного товара</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Автоматическая интеграция с учётной системой</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Работа со штрих‑кодами и DataMatrix</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Программное обеспечение (подписка)</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">1 месяц</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">Рабочие дни 9:00–18:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DataMobile Стандарт -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-6">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">DataMobile Стандарт</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/MainTeam.png' %}" alt="DataMobile Стандарт">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">89 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Универсальное мобильное решение для склада: инвентаризация, приёмка, отгрузка и перемещение товаров.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Инвентаризация и учёт остатков</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Приёмка и отгрузка со сканером штрих‑кодов</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Перемещение между складами</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Программное обеспечение (подписка)</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">3 месяца</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">Рабочие дни 9:00–18:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Мониторинг и безопасность -->
+            <div class="catalog-modal-overlay" data-modal-id="demo-7">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Мониторинг и безопасность</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="{% static 'img/IT.png' %}" alt="Мониторинг и безопасность">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость подписки</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">45 000</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в месяц</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Комплексный сервис мониторинга и защиты IT‑инфраструктуры: контроль доступности сервисов и
+                                    защита от киберугроз.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Мониторинг 24/7</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Автоматические оповещения о сбоях</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Отчётность и аналитика инцидентов</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Защита от киберугроз</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Подписка на услугу</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Период оплаты</div>
+                                        <div class="catalog-modal__info-cell">Ежемесячно</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Минимальный срок</div>
+                                        <div class="catalog-modal__info-cell">3 месяца</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Поддержка</div>
+                                        <div class="catalog-modal__info-cell">24/7</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">Подписка активируется после оформления заказа и подтверждения оплаты.</p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

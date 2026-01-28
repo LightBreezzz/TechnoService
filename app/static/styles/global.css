@@ -2,6 +2,7 @@ body {
   font-family: var(--font-family);
   line-height: var(--line-height-base);
   overflow-x: hidden; /* Защита от горизонтального скролла */
+  background-color: #f9fafb;
 }
 
 .container {

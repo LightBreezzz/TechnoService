@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <section class="cases-hero">
+        <div class="container">
+            <div class="cases-hero__text">
+                <h1 class="cases-hero__title">Кейсы</h1>
+                <p class="cases-hero__subtitle">Истории успеха наших клиентов</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases-list">
+        <div class="container">
+            <!-- Кейс 1 -->
+            <article class="case-card">
+                <div class="case-card__image-wrapper">
+                    <img src="{% static 'img/MainTeam.png' %}" alt="Команда ТехноСервис" class="case-card__image">
+                </div>
+                <div class="case-card__content">
+                    <header class="case-card__header">
+                        <div class="case-card__title-row">
+                            <div class="case-card__icon">
+                                <img src="{% static 'img/svg/cases.svg' %}" alt="Кейс">
+                            </div>
+                            <div class="case-card__title-block">
+                                <h2 class="case-card__title">ТД «Промтех»</h2>
+                                <div class="case-card__meta">
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-1.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>Торговля и дистрибуция</span>
+                                    </div>
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-2.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>120 сотрудников</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">ВЫЗОВ</h3>
+                        <p class="case-card__section-text">
+                            Частые сбои IT-инфраструктуры приводили к простоям склада и потере заказов. Не было
+                            систематического обслуживания, реагировали только на критические инциденты.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕШЕНИЕ</h3>
+                        <p class="case-card__section-text">
+                            Внедрили комплексный IT-аутсорсинг с проактивным мониторингом, резервным копированием
+                            и регулярным обслуживанием. Модернизировали серверное оборудование и сеть склада.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕЗУЛЬТАТЫ</h3>
+                        <ul class="case-card__results">
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Снижение времени простоев на 85%</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Экономия IT-бюджета на 35%</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Время реакции на инциденты &lt; 20 минут</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Повышение прозрачности и предсказуемости расходов</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <footer class="case-card__quote">
+                        <p class="case-card__quote-text">
+                            «За два года работы с ТехноСервис мы забыли про IT-простои. Теперь все работает стабильно,
+                            а затраты стали предсказуемыми».
+                        </p>
+                        <p class="case-card__quote-author">Игорь Семенов</p>
+                        <p class="case-card__quote-role">Генеральный директор ТД «Промтех»</p>
+                    </footer>
+                </div>
+            </article>
+
+            <!-- Кейс 2 -->
+            <article class="case-card">
+                <div class="case-card__image-wrapper">
+                    <img src="{% static 'img/Image-tree.png' %}" alt="Серверное оборудование" class="case-card__image">
+                </div>
+                <div class="case-card__content">
+                    <header class="case-card__header">
+                        <div class="case-card__title-row">
+                            <div class="case-card__icon">
+                                <img src="{% static 'img/svg/cases.svg' %}" alt="Кейс">
+                            </div>
+                            <div class="case-card__title-block">
+                                <h2 class="case-card__title">Медицинский центр «Здоровье+»</h2>
+                                <div class="case-card__meta">
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-1.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>Медицина</span>
+                                    </div>
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-2.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>80 сотрудников</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">ВЫЗОВ</h3>
+                        <p class="case-card__section-text">
+                            Устаревшее IT-оборудование и отсутствие стандартов безопасности создавали риски
+                            для конфиденциальных медицинских данных. Необходимо было соответствовать требованиям ФЗ-152.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕШЕНИЕ</h3>
+                        <p class="case-card__section-text">
+                            Провели полный аудит безопасности, модернизировали инфраструктуру, внедрили систему
+                            защиты данных и обеспечили соответствие требованиям законодательства.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕЗУЛЬТАТЫ</h3>
+                        <ul class="case-card__results">
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Соответствие требованиям ФЗ-152</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Модернизация всей IT-инфраструктуры</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Защита персональных данных пациентов</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Регулярные аудиты безопасности</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <footer class="case-card__quote">
+                        <p class="case-card__quote-text">
+                            «ТехноСервис помогли нам привести IT-инфраструктуру в соответствие с законом и обеспечить
+                            безопасность данных наших пациентов».
+                        </p>
+                        <p class="case-card__quote-author">Дмитрий Волков</p>
+                        <p class="case-card__quote-role">Главный врач медицинского центра «Здоровье+»</p>
+                    </footer>
+                </div>
+            </article>
+
+            <!-- Кейс 3 -->
+            <article class="case-card">
+                <div class="case-card__image-wrapper">
+                    <img src="../../static/img/MainTeam.png" alt="Офисная инфраструктура" class="case-card__image">
+                </div>
+                <div class="case-card__content">
+                    <header class="case-card__header">
+                        <div class="case-card__title-row">
+                            <div class="case-card__icon">
+                                <img src="{% static 'img/svg/cases.svg' %}" alt="Кейс">
+                            </div>
+                            <div class="case-card__title-block">
+                                <h2 class="case-card__title">Юридическая фирма «Правовед»</h2>
+                                <div class="case-card__meta">
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-1.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>Юридические услуги</span>
+                                    </div>
+                                    <div class="case-card__meta-item">
+                                        <img src="{% static 'img/svg/cases-icon-2.svg' %}" alt="" class="case-card__meta-icon">
+                                        <span>45 сотрудников</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">ВЫЗОВ</h3>
+                        <p class="case-card__section-text">
+                            Высокие расходы на печать и частые поломки МФУ тормозили подготовку судебных документов.
+                            Нужен был предсказуемый сервис и контроль затрат на печать.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕШЕНИЕ</h3>
+                        <p class="case-card__section-text">
+                            Взяли на аутсорсинг парк печатной техники: поставка оригинальных расходников, сервисное
+                            обслуживание по SLA и замена оборудования при простоях. Настроили мониторинг печати и отчётность.
+                        </p>
+                    </section>
+
+                    <section class="case-card__section">
+                        <h3 class="case-card__section-title">РЕЗУЛЬТАТЫ</h3>
+                        <ul class="case-card__results">
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Снижение затрат на печать более чем на 30%</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Отсутствие простоев критичной техники</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Прозрачная отчётность по использованию печати</span>
+                            </li>
+                            <li class="case-card__result-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="case-card__result-icon">
+                                <span>Увеличение скорости подготовки документов</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <footer class="case-card__quote">
+                        <p class="case-card__quote-text">
+                            «Мы перестали думать о картриджах и поломках принтеров — все вопросы берет на себя ТехноСервис,
+                            а команда сфокусирована на клиентах».
+                        </p>
+                        <p class="case-card__quote-author">Марина Алексеева</p>
+                        <p class="case-card__quote-role">Управляющий партнёр юридической фирмы «Правовед»</p>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
