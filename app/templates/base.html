@@ -14,13 +14,51 @@
   <link rel="stylesheet" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" href="{% static 'styles/index.css' %}">
   <link rel="stylesheet" href="{% static 'styles/services.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/catalog.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/cases.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/contacts.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
 
-    <script src="{% static 'js/main.js' %}" defer></script>
-
+  <script src="{% static 'js/main.js' %}" defer></script>
+  <script src="{% static 'js/services.js' %}" defer></script>
+  <script src="{% static 'js/catalog.js' %}" defer></script>
+  <script src="{% static 'js/about.js' %}" defer></script>
+  <script src="{% static 'js/cases.js' %}" defer></script>
+  <script src="{% static 'js/contacts.js' %}" defer></script>
+  <script src="{% static 'js/cart.js' %}" defer></script>
 
 </head>
-<body>
+<body data-catalog-url="{% url 'catalog' %}">
   {% include 'includes/header.html' %}
+
+  <div class="cart-overlay" data-cart-overlay>
+    <div class="cart">
+      <header class="cart__header">
+        <h2 class="cart__title">Корзина</h2>
+        <button class="cart__close" type="button" data-cart-close aria-label="Закрыть">&times;</button>
+      </header>
+      <div class="cart__header-divider"></div>
+      <div class="cart__body">
+        <div class="cart__empty" data-cart-empty>
+          <div class="cart__empty-icon">
+            <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="Корзина пуста">
+          </div>
+          <p class="cart__empty-title">Корзина пуста</p>
+          <button class="cart__empty-link" type="button" data-cart-go-catalog>Добавьте товары из каталога</button>
+        </div>
+        <div class="cart__items" data-cart-items></div>
+      </div>
+      <footer class="cart__footer" data-cart-footer>
+        <div class="cart__total">
+          <span class="cart__total-label">Итого:</span>
+          <span class="cart__total-value" data-cart-total>0 ₽</span>
+        </div>
+        <button class="cart__checkout" type="button">Оформить заказ</button>
+      </footer>
+    </div>
+  </div>
+
   <main>
     {% block content %}{% endblock %}
   </main>

@@ -1,0 +1,751 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <section class="catalog-title">
+        <div class="container">
+            <div class="catalog-title__text">
+                <h1 class="catalog-title__h1">Каталог товаров и услуг</h1>
+                <p class="catalog-title__p">Выберите подходящие решения для вашего бизнеса</p>   
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-tabs">
+                <a href="{% url 'catalog' %}" class="catalog-tab">
+                    <p >Подписки на услуги</p>
+                </a>
+                <a href="{% url 'catalog_printers' %}" class="catalog-tab catalog-tab--active">
+                    <p>Принтеры и МФУ</p>
+                </a>
+            </div>
+
+            <div class="catalog-grid">
+                <!-- Карточка товара (макет для будущей загрузки с бэкенда) -->
+                <article class="catalog-card" data-product-id="printer-1">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/Image-four.png" alt="Принтер офисный" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Принтер офисный</h3>
+                        <p class="catalog-card__description">Надежный принтер для ежедневной печати документов</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Скорость печати до 30 стр/мин</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Двусторонняя печать</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Подключение по Wi‑Fi</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">19 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="printer-2">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/Image-four.png" alt="МФУ для отдела" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">МФУ для отдела</h3>
+                        <p class="catalog-card__description">Печать, сканирование и копирование в одном устройстве</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>ADF автоподатчик</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Сканирование в облако</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Экономичный режим</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">49 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="printer-3">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/Image-four.png" alt="Принтер цветной" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Принтер цветной</h3>
+                        <p class="catalog-card__description">Высокое качество печати презентаций и материалов</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Печать A4/A3</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Сетевой интерфейс</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Поддержка PostScript</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">79 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="printer-4">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/Image-four.png" alt="Сканер документов" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Сканер документов</h3>
+                        <p class="catalog-card__description">Быстрое потоковое сканирование для офиса</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Двустороннее сканирование</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Распознавание текста OCR</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Пакетная обработка</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">29 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="printer-5">
+                    <div class="catalog-card__image-wrapper">
+                        {% with image_name="Image-two'" %}
+                        <img src="../../static/img/Image-four.png" alt="МФУ компактное" class="catalog-card__image">
+                        {% endwith %}
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">МФУ компактное</h3>
+                        <p class="catalog-card__description">Компактное решение для небольшого офиса</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Печать и копирование</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Сканирование в PDF</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Подключение USB/Wi‑Fi</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">24 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalog-card" data-product-id="printer-6">
+                    <div class="catalog-card__image-wrapper">
+                        <img src="../../static/img/Image-four.png" alt="Расходные материалы" class="catalog-card__image">
+                    </div>
+                    <div class="catalog-card__content">
+                        <h3 class="catalog-card__title">Расходные материалы</h3>
+                        <p class="catalog-card__description">Картриджи и комплектующие для принтеров и МФУ</p>
+
+                        <ul class="catalog-card__features">
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Оригинальные и совместимые</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Подбор по модели</span>
+                            </li>
+                            <li class="catalog-card__feature-item">
+                                <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="" class="catalog-card__feature-icon">
+                                <span>Быстрая доставка</span>
+                            </li>
+                        </ul>
+
+                        <div class="catalog-card__divider"></div>
+
+                        <div class="catalog-card__footer">
+                            <div class="catalog-card__price">
+                                <div class="catalog-card__price-value">2 900</div>
+                                <div class="catalog-card__price-period">₽</div>
+                            </div>
+                            <button type="button" class="catalog-card__button">
+                                <img src="../../static/img/svg/basket-card-white.svg" alt="" class="catalog-card__button-icon">
+                                <span class="catalog-card__button-text">В корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Модальные окна для Принтеров и МФУ -->
+
+            <!-- Принтер офисный -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-1">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Принтер офисный</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="Принтер офисный">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">19 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">разовая покупка</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Надёжный офисный принтер для ежедневной печати документов формата A4.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Скорость печати до 30 стр/мин</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Двусторонняя печать</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Подключение по Wi‑Fi и Ethernet</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Лазерный принтер</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Формат</div>
+                                        <div class="catalog-modal__info-cell">A4</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">12 месяцев</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Установка и первичная настройка оборудования могут быть включены по отдельному соглашению.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- МФУ для отдела -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-2">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">МФУ для отдела</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="МФУ для отдела">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">49 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">разовая покупка</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Многофункциональное устройство для печати, сканирования и копирования документов в отделе.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>ADF автоподатчик оригиналов</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Сканирование в почту и облако</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Экономичный режим печати</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">МФУ</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Формат</div>
+                                        <div class="catalog-modal__info-cell">A4/A3</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">12 месяцев</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Доступны опции расширенной гарантии и сервисного контракта.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Принтер цветной -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-3">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Принтер цветной</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="Принтер цветной">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">79 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">разовая покупка</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Цветной принтер для печати маркетинговых материалов, презентаций и отчётов.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Печать A4/A3</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Сетевой интерфейс</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Поддержка PostScript</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Цветной принтер</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Формат</div>
+                                        <div class="catalog-modal__info-cell">A4/A3</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">12 месяцев</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Рекомендуется использование оригинальных расходных материалов для сохранения качества печати.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сканер документов -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-4">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Сканер документов</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="Сканер документов">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">29 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">разовая покупка</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Потоковый сканер для быстрого оцифровывания документов и договоров.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Двустороннее сканирование</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Распознавание текста (OCR)</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Пакетная обработка документов</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Потоковый сканер</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Формат</div>
+                                        <div class="catalog-modal__info-cell">A4</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">12 месяцев</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Возможно подключение к системе электронного архива документов.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- МФУ компактное -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-5">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">МФУ компактное</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="МФУ компактное">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">24 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">разовая покупка</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Компактное МФУ для небольших офисов и рабочих групп.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Печать и копирование</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Сканирование в PDF</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Подключение USB/Wi‑Fi</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">МФУ</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Формат</div>
+                                        <div class="catalog-modal__info-cell">A4</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">12 месяцев</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Установка драйверов и подключение к сети возможны силами наших специалистов.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Расходные материалы -->
+            <div class="catalog-modal-overlay" data-modal-id="printer-6">
+                <div class="catalog-modal">
+                    <div class="catalog-modal__header">
+                        <h2 class="catalog-modal__title">Расходные материалы</h2>
+                        <button type="button" class="catalog-modal__close-icon" data-modal-close>&times;</button>
+                    </div>
+                    <div class="catalog-modal__body">
+                        <div class="catalog-modal__left">
+                            <div class="catalog-modal__left-image">
+                                <img src="../../static/img/Image-four.png" alt="Расходные материалы">
+                            </div>
+                            <div class="catalog-modal__price-panel">
+                                <div class="catalog-modal__price-label">Стоимость от</div>
+                                <div class="catalog-modal__price-main">
+                                    <span class="catalog-modal__price-number">2 900</span>
+                                    <span class="catalog-modal__price-currency">₽</span>
+                                </div>
+                                <div class="catalog-modal__price-note">в зависимости от модели</div>
+                            </div>
+                        </div>
+                        <div class="catalog-modal__right">
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Описание</div>
+                                <p class="catalog-modal__section-text">
+                                    Картриджи, тонеры и комплектующие для принтеров и МФУ различных производителей.
+                                </p>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Возможности</div>
+                                <ul class="catalog-modal__features-list">
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Оригинальные и совместимые варианты</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Подбор по модели устройства</span>
+                                    </li>
+                                    <li class="catalog-modal__features-item">
+                                        <img src="{% static 'img/svg/check-point-icon.svg' %}" alt="">
+                                        <span>Быстрая доставка по России</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-modal__divider"></div>
+                            <div class="catalog-modal__section">
+                                <div class="catalog-modal__section-title">Дополнительная информация</div>
+                                <div class="catalog-modal__info-table">
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Тип</div>
+                                        <div class="catalog-modal__info-cell">Расходные материалы</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Совместимость</div>
+                                        <div class="catalog-modal__info-cell">Подбор по модели</div>
+                                    </div>
+                                    <div class="catalog-modal__info-row">
+                                        <div class="catalog-modal__info-cell">Гарантия</div>
+                                        <div class="catalog-modal__info-cell">По условиям производителя</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog-modal__bottom">
+                        <p class="catalog-modal__note">
+                            Уточните наличие и стоимость расходников для вашей модели у менеджера.
+                        </p>
+                        <div class="catalog-modal__bottom-buttons">
+                            <button type="button" class="catalog-modal__btn-secondary" data-modal-close>Закрыть</button>
+                            <button type="button" class="catalog-modal__btn-primary">
+                                <img src="{% static 'img/svg/basket-card-white.svg' %}" alt="" class="catalog-modal__btn-primary-icon">
+                                <span>Добавить в корзину</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <section class="contacts-hero">
+        <div class="container">
+            <div class="contacts-hero__text">
+                <h1 class="contacts-hero__title">Контакты</h1>
+                <p class="contacts-hero__subtitle">Свяжитесь с нами удобным для вас способом</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Верхние карточки: телефон, email, адрес -->
+    <section class="contacts-cards">
+        <div class="container">
+            <div class="contacts-cards__grid">
+                <article class="contacts-card card-hover">
+                    <div class="contacts-card__icon">
+                        <img src="{% static 'img/svg/contact-1.svg' %}" alt="Телефон">
+                    </div>
+                    <h2 class="contacts-card__title">Телефон</h2>
+                    <p class="contacts-card__value">+7 (495) 123-45-67</p>
+                    <p class="contacts-card__note">Звоните в любое время</p>
+                </article>
+
+                <article class="contacts-card card-hover">
+                    <div class="contacts-card__icon">
+                        <img src="{% static 'img/svg/contact-2.svg' %}" alt="Email">
+                    </div>
+                    <h2 class="contacts-card__title">Email</h2>
+                    <p class="contacts-card__value">info@ts-msk.ru</p>
+                    <p class="contacts-card__note">Ответим в течение часа</p>
+                </article>
+
+                <article class="contacts-card card-hover">
+                    <div class="contacts-card__icon">
+                        <img src="{% static 'img/svg/contact-3.svg' %}" alt="Адрес">
+                    </div>
+                    <h2 class="contacts-card__title">Адрес</h2>
+                    <p class="contacts-card__value">г. Москва, ул. Примерная, д. 1, оф. 101</p>
+                    <p class="contacts-card__note">Пн–Пт: 9:00 – 18:00</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма и часто задаваемые вопросы -->
+    <section class="contacts-main">
+        <div class="container contacts-main__layout">
+            <!-- Форма бесплатного аудита -->
+            <section class="contacts-form">
+                <h2 class="contacts-form__title">Получить бесплатный аудит</h2>
+                <form class="contacts-form__body" action="#" method="post">
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Ваше имя *</span>
+                        <input type="text" name="name" class="contacts-form__input" placeholder="Введите ваше имя">
+                    </label>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Компания</span>
+                        <input type="text" name="company" class="contacts-form__input" placeholder="Название компании">
+                    </label>
+
+                    <div class="contacts-form__row">
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Телефон *</span>
+                            <input type="tel" name="phone" class="contacts-form__input" placeholder="+7 (___) ___-__-__">
+                        </label>
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Email *</span>
+                            <input type="email" name="email" class="contacts-form__input" placeholder="Ваш email">
+                        </label>
+                    </div>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Интересующая услуга</span>
+                        <input type="text" name="service" class="contacts-form__input" placeholder="Например, IT-аутсорсинг">
+                    </label>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Сообщение</span>
+                        <textarea name="message" class="contacts-form__textarea" placeholder="Опишите вашу ситуацию или задачу"></textarea>
+                    </label>
+
+                    <button type="submit" class="contacts-form__submit">Отправить заявку</button>
+                    <p class="contacts-form__policy">
+                        Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                    </p>
+                </form>
+            </section>
+
+            <!-- Часто задаваемые вопросы и режим работы -->
+            <section class="contacts-faq">
+                <h2 class="contacts-faq__title">Часто задаваемые вопросы</h2>
+
+                <div class="contacts-faq__list">
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Как быстро вы реагируете на инциденты?</h3>
+                        <p class="contacts-faq__answer">
+                            Время реакции зависит от выбранного тарифа: от 15 минут для премиум-пакета до 2 часов для базового.
+                        </p>
+                    </article>
+
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Какие гарантии вы предоставляете?</h3>
+                        <p class="contacts-faq__answer">
+                            Мы предоставляем SLA-гарантии на время реакции и решения инцидентов, а также гарантию возврата
+                            средств, если не соблюдаем условия договора.
+                        </p>
+                    </article>
+
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Можно ли начать с пробного периода?</h3>
+                        <p class="contacts-faq__answer">
+                            Да, мы предлагаем бесплатный аудит инфраструктуры и пробный месяц обслуживания со скидкой 50%.
+                        </p>
+                    </article>
+
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">Обслуживаете ли вы компании за пределами Москвы?</h3>
+                        <p class="contacts-faq__answer">
+                            Да, мы работаем с клиентами по всей России. Для удаленной поддержки география не имеет значения.
+                        </p>
+                    </article>
+                </div>
+
+                <article class="contacts-schedule">
+                    <div class="contacts-schedule__icon">
+                        <img src="{% static 'img/svg/contact-4.svg' %}" alt="Режим работы">
+                    </div>
+                    <div class="contacts-schedule__content">
+                        <h3 class="contacts-schedule__title">Режим работы</h3>
+                        <p class="contacts-schedule__text">
+                            Понедельник – Пятница: 9:00 – 18:00
+                        </p>
+                        <p class="contacts-schedule__text">
+                            Суббота – Воскресенье: выходной
+                        </p>
+                        <p class="contacts-schedule__support">
+                            Техническая поддержка: 24/7
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
