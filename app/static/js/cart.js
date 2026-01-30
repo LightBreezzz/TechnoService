@@ -120,6 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCart();
     }
 
+    // Экспорт для вызова из catalog.js
+    window.TechnoServiceCart = {
+        addFromCard: addItemFromCard,
+        openCart: openCart
+    };
+
     // Открытие/закрытие корзины
     document.querySelectorAll('[data-cart-open]').forEach(btn => {
         btn.addEventListener('click', function () {

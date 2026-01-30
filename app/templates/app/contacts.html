@@ -49,38 +49,50 @@
     <section class="contacts-main">
         <div class="container contacts-main__layout">
             <!-- Форма бесплатного аудита -->
-            <section class="form-control">
+            <section class="form-control" id="audit-form">
                 <h2 class="contacts-form__title">Получить бесплатный аудит</h2>
-                <form class="contacts-form__body" action="#" method="post">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="contacts-form__success">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <form class="contacts-form__body" action="{% url 'contacts' %}#audit-form" method="post" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="contacts-form__errors">{{ form.non_field_errors }}</div>
+                    {% endif %}
                     <label class="contacts-form__field">
-                        <span class="contacts-form__label">Ваше имя *</span>
-                        <input type="text" name="name" class="contacts-form__input" placeholder="Введите ваше имя">
+                        <span class="contacts-form__label">Ваше имя</span>
+                        {{ form.name }}
+                        {% if form.name.errors %}<span class="contacts-form__error">{{ form.name.errors.0 }}</span>{% endif %}
                     </label>
 
                     <label class="contacts-form__field">
                         <span class="contacts-form__label">Компания</span>
-                        <input type="text" name="company" class="contacts-form__input" placeholder="Название компании">
+                        {{ form.company }}
                     </label>
 
                     <div class="contacts-form__row">
                         <label class="contacts-form__field contacts-form__field--half">
                             <span class="contacts-form__label">Телефон *</span>
-                            <input type="tel" name="phone" class="contacts-form__input" placeholder="+7 (___) ___-__-__">
+                            {{ form.phone }}
+                            {% if form.phone.errors %}<span class="contacts-form__error">{{ form.phone.errors.0 }}</span>{% endif %}
                         </label>
                         <label class="contacts-form__field contacts-form__field--half">
                             <span class="contacts-form__label">Email *</span>
-                            <input type="email" name="email" class="contacts-form__input" placeholder="Ваш email">
+                            {{ form.email }}
+                            {% if form.email.errors %}<span class="contacts-form__error">{{ form.email.errors.0 }}</span>{% endif %}
                         </label>
                     </div>
 
                     <label class="contacts-form__field">
                         <span class="contacts-form__label">Интересующая услуга</span>
-                        <input type="text" name="service" class="contacts-form__input" placeholder="Например, IT-аутсорсинг">
+                        {{ form.service }}
                     </label>
 
                     <label class="contacts-form__field">
                         <span class="contacts-form__label">Сообщение</span>
-                        <textarea name="message" class="contacts-form__textarea" placeholder="Опишите вашу ситуацию или задачу"></textarea>
+                        {{ form.message }}
                     </label>
 
                     <button type="submit" class="contacts-form__submit">Отправить заявку</button>

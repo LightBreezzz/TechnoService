@@ -14,16 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation(); // чтобы не открывать модалку при клике по кнопке
 
-            const card = this.closest('.catalog-card');
-            const title = card.querySelector('.catalog-card__title').textContent;
-            const price = card.querySelector('.catalog-card__price-value').textContent;
-
-            // Здесь будет логика добавления в корзину
-            // В будущем можно добавить запрос к бэкенду
-            console.log('Товар добавлен в корзину:', {
-                title: title,
-                price: price
-            });
+            // Добавление в корзину через cart.js
+            if (window.TechnoServiceCart && window.TechnoServiceCart.addFromCard) {
+                window.TechnoServiceCart.addFromCard(this);
+                window.TechnoServiceCart.openCart();
+            }
 
             // Визуальная обратная связь
             const originalText = this.querySelector('.catalog-card__button-text').textContent;
@@ -70,6 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
             openModalById(productId);
         });
+    });
+
+    // Добавление в корзину из модального окна
+    modalOverlays.forEach(overlay => {
+        const addBtn = overlay.querySelector('.catalog-modal__btn-primary');
+        if (addBtn) {
+            addBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const modalId = overlay.getAttribute('data-modal-id');
+                const card = document.querySelector('.catalog-card[data-product-id="' + modalId + '"]');
+                if (card && window.TechnoServiceCart && window.TechnoServiceCart.addFromCard) {
+                    const cardButton = card.querySelector('.catalog-card__button');
+                    if (cardButton) {
+                        window.TechnoServiceCart.addFromCard(cardButton);
+                        window.TechnoServiceCart.openCart();
+                        closeModal(overlay);
+                    }
+                }
+            });
+        }
     });
 
     // Закрытие по крестику, кнопке "Закрыть" и клику по фону

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.contrib import messages
 from .forms import audit_log_form
-# from .models import audit_log
 
 
 def contacts(request):
@@ -8,7 +9,8 @@ def contacts(request):
         form = audit_log_form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contacts')
+            messages.success(request, 'Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.')
+            return redirect(reverse('contacts') + '#audit-form')
     else:
         form = audit_log_form()
     return render(request, 'app/contacts.html', {'form': form})

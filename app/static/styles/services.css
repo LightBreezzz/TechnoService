@@ -116,6 +116,12 @@
     margin-left: 7px;
 }
 
+a.button-order{
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+}
+
 .button-order{
     display: flex;
     background: #00c2d2;
