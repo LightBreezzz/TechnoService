@@ -1,0 +1,55 @@
+# Docker Compose для TechnoService
+# Запуск: docker compose up -d
+# Остановка: docker compose down
+
+services:
+  # --- PostgreSQL: отдельный контейнер для БД ---
+  db:
+    image: postgres:16-alpine
+    container_name: technoservice_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-technoservice}
+      POSTGRES_USER: ${POSTGRES_USER:-technoservice}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-technoservice}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"  # Доступ с хоста для отладки (можно убрать в prod)
+
+  # --- Django: контейнер с приложением ---
+  web:
+    build: .
+    container_name: technoservice_web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:-dev-secret-change-me}
+      - DEBUG=${DEBUG:-False}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      - DB_ENGINE=django.db.backends.postgresql
+      - DB_NAME=${POSTGRES_DB:-technoservice}
+      - DB_USER=${POSTGRES_USER:-technoservice}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+    volumes:
+      # Медиа-файлы (загрузки пользователей) — отдельный том
+      - media_data:/app/media
+      # Статика (опционально, для dev можно монтировать код)
+      # - ./app/static:/app/app/static:ro
+    ports:
+      - "8000:8000"
+
+volumes:
+  # Данные PostgreSQL — persistence БД
+  postgres_data:
+  # Медиа-файлы (фото товаров, подписок и т.д.) — отдельно от кода
+  media_data:
