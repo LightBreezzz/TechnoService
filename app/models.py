@@ -98,7 +98,42 @@ class audit_log(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        verbose_name = "Заявка на аудит"
+        verbose_name_plural = "Заявки на аудит"
 
-# Create your models here.
+    def __str__(self):
+        return self.name or "Заявка на аудит"
+
+
+class Order(models.Model):
+    """Заявка из корзины с выбранными товарами."""
+
+    name = models.CharField("Имя", max_length=255, null=True, blank=True)
+    company = models.CharField("Компания", max_length=255, null=True, blank=True)
+    email = models.EmailField("Email", max_length=255, validators=[EmailValidator(message="Invalid email address")])
+    phone = models.CharField(
+        "Телефон",
+        max_length=25,
+        validators=[
+            RegexValidator(
+                regex=r"^[\d\s\+\-\(\)]{10,25}$",
+                message="Введите корректный номер телефона",
+            )
+        ],
+    )
+    comment = models.TextField("Комментарий", null=True, blank=True)
+
+    items = models.JSONField("Товары из корзины", default=list)
+    total_price = models.PositiveIntegerField("Сумма заказа (₽)", default=0)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Заказ из корзины"
+        verbose_name_plural = "Заказы из корзины"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"Заказ #{self.pk or ''} от {self.name or 'без имени'}"

@@ -33,6 +33,25 @@ document.addEventListener('DOMContentLoaded', function () {
         return items.reduce((sum, item) => sum + item.price * item.qty, 0);
     }
 
+    function getCount(items) {
+        return items.reduce((sum, item) => sum + item.qty, 0);
+    }
+
+    function updateCartCounter() {
+        const items = loadCart();
+        const count = getCount(items);
+        document.querySelectorAll('[data-cart-count]').forEach(el => {
+            if (!el) return;
+            if (count > 0) {
+                el.textContent = count;
+                el.classList.add('basket-btn__counter--visible');
+            } else {
+                el.textContent = '';
+                el.classList.remove('basket-btn__counter--visible');
+            }
+        });
+    }
+
     function renderCart() {
         const items = loadCart();
         itemsContainer.innerHTML = '';
@@ -40,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!items.length) {
             emptyBlock.style.display = 'flex';
             footer.style.display = 'none';
+            totalEl.textContent = '0 ₽';
+            updateCartCounter();
             return;
         }
 
@@ -77,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const total = getTotal(items);
         totalEl.textContent = `${formatPrice(total)} ₽`;
+        updateCartCounter();
     }
 
     function openCart() {
@@ -140,10 +162,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const catalogUrl = body.dataset.catalogUrl;
+    const orderUrl = body.dataset.orderUrl;
     const goCatalogBtn = overlay.querySelector('[data-cart-go-catalog]');
     if (goCatalogBtn && catalogUrl) {
         goCatalogBtn.addEventListener('click', function () {
             window.location.href = catalogUrl;
+        });
+    }
+
+    const checkoutBtn = overlay.querySelector('[data-cart-checkout]');
+    if (checkoutBtn && orderUrl) {
+        checkoutBtn.addEventListener('click', function () {
+            const items = loadCart();
+            if (!items.length) return;
+            // Переходим на страницу оформления заказа,
+            // сами товары передадим через localStorage.
+            window.location.href = orderUrl;
         });
     }
 
@@ -179,5 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!button) return;
         addItemFromCard(button);
     });
+
+    // Обновить счётчик при первой загрузке
+    updateCartCounter();
 });
 

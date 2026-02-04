@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content content--order">
+    <section class="contacts-hero">
+        <div class="container">
+            <div class="contacts-hero__text">
+                <h1 class="contacts-hero__title">Оформление заказа</h1>
+                <p class="contacts-hero__subtitle">Заполните данные, и мы свяжемся с вами для подтверждения заказа</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts-main">
+        <div class="container contacts-main__layout">
+            <section class="form-control">
+                <h2 class="contacts-form__title">Контактные данные</h2>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="contacts-form__success">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <form class="contacts-form__body" action="{% url 'order' %}" method="post" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="contacts-form__errors">{{ form.non_field_errors }}</div>
+                    {% endif %}
+
+                    <input type="hidden" name="cart_items" value="[]" data-order-cart-items>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Ваше имя</span>
+                        {{ form.name }}
+                        {% if form.name.errors %}<span class="contacts-form__error">{{ form.name.errors.0 }}</span>{% endif %}
+                    </label>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Компания</span>
+                        {{ form.company }}
+                    </label>
+
+                    <div class="contacts-form__row">
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Телефон *</span>
+                            {{ form.phone }}
+                            {% if form.phone.errors %}<span class="contacts-form__error">{{ form.phone.errors.0 }}</span>{% endif %}
+                        </label>
+                        <label class="contacts-form__field contacts-form__field--half">
+                            <span class="contacts-form__label">Email *</span>
+                            {{ form.email }}
+                            {% if form.email.errors %}<span class="contacts-form__error">{{ form.email.errors.0 }}</span>{% endif %}
+                        </label>
+                    </div>
+
+                    <label class="contacts-form__field">
+                        <span class="contacts-form__label">Комментарий к заказу</span>
+                        {{ form.comment }}
+                    </label>
+
+                    <button type="submit" class="contacts-form__submit">Отправить заказ</button>
+                    <p class="contacts-form__policy">
+                        Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                    </p>
+                </form>
+            </section>
+
+            <section class="contacts-faq">
+                <h2 class="contacts-faq__title">Что будет дальше</h2>
+                <div class="contacts-faq__list">
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">1. Мы получим список ваших товаров</h3>
+                        <p class="contacts-faq__answer">
+                            Все позиции из корзины сохраняются в заказе вместе с количеством и ценой.
+                        </p>
+                    </article>
+                    <article class="contacts-faq__item">
+                        <h3 class="contacts-faq__question">2. Менеджер свяжется с вами</h3>
+                        <p class="contacts-faq__answer">
+                            Мы уточним детали заказа и срок поставки.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}
+

@@ -29,7 +29,7 @@
   <script src="{% static 'js/cart.js' %}" defer></script>
 
 </head>
-<body data-catalog-url="{% url 'catalog' %}">
+<body data-catalog-url="{% url 'catalog' %}" data-order-url="{% url 'order' %}">
   {% include 'includes/header.html' %}
 
   <div class="cart-overlay" data-cart-overlay>
@@ -54,7 +54,7 @@
           <span class="cart__total-label">Итого:</span>
           <span class="cart__total-value" data-cart-total>0 ₽</span>
         </div>
-        <button class="cart__checkout" type="button">Оформить заказ</button>
+        <button class="cart__checkout" type="button" data-cart-checkout>Оформить заказ</button>
       </footer>
     </div>
   </div>

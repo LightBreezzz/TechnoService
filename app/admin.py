@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import audit_log, Subscription, SubscriptionFeature, Product, ProductFeature
+from .models import audit_log, Subscription, SubscriptionFeature, Product, ProductFeature, Order
 
 
 # --- Inline для возможностей ---
@@ -55,3 +55,5 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(audit_log)
+
+admin.site.register(Order)

@@ -118,11 +118,33 @@
   width: 44px;
   height: 44px;
   transition: background-color 0.2s ease;
+  position: relative;
 }
 
 .basket-btn:hover {
   background-color: #f2f2f2;
   cursor: pointer;
+}
+
+.basket-btn__counter {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background-color: #ff4b4b;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 4px;
+  box-shadow: 0 0 0 2px #ffffff;
+  display: none;
+}
+
+.basket-btn__counter--visible {
+  display: inline-block;
 }
 
 .consultation-btn{
