@@ -201,18 +201,18 @@ footer{
     line-height: 143%;
     color: #d1d5dc;
     }
-.fotter-top__item{
+.footer-top__item{
     width: 200px;
 }
 
-.fotter-top__item h3{
+.footer-top__item h3{
     font-weight: 400;
     font-size: 13px;
     line-height: 150%;
     color: #fff;
     margin-bottom: 13px;
 }
-.fotter-top__item p, .fotter-top__item a{
+.footer-top__item p, .footer-top__item a{
     font-weight: 400;
     font-size: 12px;
     line-height: 143%;
@@ -224,7 +224,7 @@ footer{
     width: fit-content;
 }
 
-.fotter-top__item a:hover{
+.footer-top__item a:hover{
     color: #00c2d2;
 }
 
@@ -283,7 +283,7 @@ footer{
     }
 
     .container{
-        padding: 0 4vw;
+        padding: 0 max(16px, 4vw);
     }
 
     .text-block{
@@ -315,7 +315,7 @@ footer{
         padding-top: 28px;
     }
 
-    .fotter-top__item{
+    .footer-top__item{
         width: 100%;
     }
 

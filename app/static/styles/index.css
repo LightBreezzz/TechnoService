@@ -3,6 +3,7 @@
   background: #0d2c5f; /* Тёмно-синий фон, как на макете */
   color: white;
   padding: 80px 0;
+  overflow-x: hidden;
 }
 
 .rectangle-block {
@@ -10,14 +11,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 48px;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .rectangle-block-img {
   width: 663px;
+  max-width: 100%;
   height: 434px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .rectangle-block-content {
@@ -120,6 +127,7 @@
   font-size: 30px;
   line-height: 120%;
   color: #0a2463;
+  
 }
 .section-paragraph{
   font-weight: 400;
@@ -334,12 +342,15 @@
 .work-steps {
   padding: 80px 0;
   background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 .simple-work-steps {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .simple-work-steps-header {
@@ -384,6 +395,7 @@
 
 .simple-works-card-pin {
   flex: 1;
+  min-width: 0;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -763,23 +775,47 @@
 
 /* АДАПТИВНОСТЬ */
 
-@media (max-width: 768px) {
+/* Планшетный диапазон (769–900px): предотвращаем артефакты на границе breakpoint */
+@media (max-width: 900px) {
   .rectangle-block {
     flex-direction: column;
     text-align: center;
+    gap: 32px;
+    padding: 0 20px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .rectangle-block-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .rectangle-block-content-paragraph {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main-services .container {
+    padding: 0 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .rectangle-block-img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    min-width: 0;
   }
 
-  .rectangle-block-content-title {
-    font-size: 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
+  .section-paragraph {
+    width: 100%;
+    max-width: 100%;
   }
 
   .what-is-outsourcing-block {
@@ -789,6 +825,202 @@
   .what-is-outsourcing-card-img {
     flex: 0 0 100%;
     width: 100%;
+    min-width: 0;
+  }
+
+  .why-choose-us-block {
+    flex-direction: column;
+  }
+
+  .why-choose-us-block-img {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .rectangle-block-2-world {
+    padding: 0 20px;
+  }
+
+  .rectangle-block-2-all-world {
+    flex-direction: column;
+  }
+
+  .rectangle-block-2-all-world-img {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .rectangle-block-2-all-world-stats {
+    flex-wrap: wrap;
+  }
+
+  .rectangle-block-2-all-world-card {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 140px;
+  }
+
+  .simple-works-card {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .simple-works-card::before {
+    display: none;
+  }
+
+  .simple-works-card-pin {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 160px;
+  }
+
+  /* Таймлайн: на планшете карточки в одну колонку */
+  .timeline-card {
+    width: 100%;
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .timeline-block {
+    padding: 40px 20px 40px 50px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-card::before {
+    left: -30px !important;
+    right: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .former-swiper {
+    padding: 40px 0;
+  }
+
+  .former-swiper .rectangle-block {
+    padding: 0 20px;
+  }
+
+  .rectangle-block {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .rectangle-block-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .rectangle-block-content-paragraph {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rectangle-block-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-width: 0;
+    display: block;
+    object-fit: cover;
+  }
+
+  .rectangle-block {
+    overflow: hidden;
+  }
+
+  .rectangle-block-content-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .rectangle-block-content-button {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .rectangle-block-content-button-audit-free,
+  .rectangle-block-content-button-our-services {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .main-services .container {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .simple-work-steps-paragraph {
+    max-width: 100%;
+  }
+
+  .history-company-title {
+    font-size: 1.5rem;
+  }
+
+  .history-company-content {
+    font-size: 1rem;
+  }
+
+  .why-choose-us-block-title {
+    font-size: 1.5rem;
+  }
+
+  .rectangle-block-2-all-world-title {
+    font-size: 1.5rem;
+  }
+
+  .section-paragraph {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .what-is-outsourcing {
+    padding: 40px 0;
+  }
+
+  .what-is-outsourcing-title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .what-is-outsourcing-content {
+    padding: 0 20px;
+  }
+
+  .what-is-outsourcing-block {
+    flex-direction: column !important;
+  }
+
+  .what-is-outsourcing-card-img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 200px;
+  }
+
+  .what-is-outsourcing-card-block {
+    padding: 24px 20px;
+    min-width: 0;
+  }
+
+  .why-choose-us {
+    padding: 40px 0;
   }
 
   .why-choose-us-block {
@@ -801,21 +1033,62 @@
     height: 250px;
   }
 
+  .work-steps {
+    padding: 40px 0;
+  }
+
+  .simple-work-steps-header {
+    margin-bottom: 40px;
+  }
+
+  .simple-work-steps-title {
+    font-size: 1.5rem;
+  }
+
+  .simple-works-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0 0;
+    align-items: stretch;
+  }
+
+  .simple-works-card::before {
+    display: none;
+  }
+
+  .simple-works-card-pin {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    text-align: left;
+  }
+
+  .simple-works-card-pin:last-child {
+    margin-bottom: 0;
+  }
+
+  .simple-works-card-number {
+    margin-bottom: 8px;
+  }
+
+  .rectangle-blue-2 {
+    padding: 40px 0;
+  }
+
+  .rectangle-blue-2 .rectangle-block-2-world {
+    padding: 0 20px;
+  }
+
   .rectangle-block-2-all-world-stats {
     flex-direction: column;
   }
 
   .rectangle-block-2-all-world-card {
     flex: 1 1 100%;
-  }
-
-  .simple-works-card {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .simple-works-card::before {
-    display: none;
+    min-width: auto;
   }
 
   .rectangle-block-2-all-world {
@@ -825,20 +1098,180 @@
   .rectangle-block-2-all-world-img {
     flex: 0 0 100%;
     width: 100%;
+    height: 250px;
+  }
+
+  .history-company {
+    padding: 40px 0;
+  }
+
+  .history-company-and-timeline {
+    padding: 0 20px;
+  }
+
+  .timeline-block {
+    padding: 40px 20px 40px 50px;
+  }
+
+  .timeline-line {
+    left: 20px;
   }
 
   .timeline-card {
     width: 100%;
     left: 0 !important;
     margin-left: 0 !important;
+    padding-left: 24px;
   }
 
   .timeline-card::before {
-    left: -35px !important;
+    left: -30px !important;
     right: auto !important;
   }
 
-  .timeline-line {
-    left: 20px;
+  .optimization-cost {
+    padding: 40px 0;
+  }
+
+  .optimization-cost .optimization-cost-block {
+    padding: 0 20px;
+  }
+
+  .optimization-cost-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Очень маленькие экраны (телефоны) */
+@media (max-width: 480px) {
+  .former-swiper .rectangle-block {
+    padding: 0 16px;
+  }
+
+  .rectangle-block-content-title {
+    font-size: 1.5rem;
+  }
+
+  .rectangle-block-content-paragraph {
+    font-size: 16px;
+  }
+
+  .rectangle-block-content-button-audit-free,
+  .rectangle-block-content-button-our-services {
+    max-width: 100%;
+    min-height: 48px;
+  }
+
+  .main-services .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .service-card {
+    padding: 24px 16px;
+  }
+
+  .what-is-outsourcing-title {
+    font-size: 1.25rem;
+    padding: 0 16px;
+  }
+
+  .what-is-outsourcing-content {
+    padding: 0 16px;
+  }
+
+  .what-is-outsourcing-card-block {
+    padding: 20px 16px;
+  }
+
+  .why-choose-us-container {
+    padding: 0 16px;
+  }
+
+  .why-choose-us-block-title {
+    font-size: 1.25rem;
+  }
+
+  .why-choose-us-block-paragraph {
+    font-size: 1rem;
+  }
+
+  .simple-work-steps {
+    padding: 0 16px;
+  }
+
+  .simple-work-steps-paragraph {
+    font-size: 1rem;
+  }
+
+  .simple-works-card-number {
+    font-size: 2rem;
+  }
+
+  .rectangle-blue-2 .rectangle-block-2-world {
+    padding: 0 16px;
+  }
+
+  .rectangle-block-2-all-world-title {
+    font-size: 1.25rem;
+  }
+
+  .rectangle-block-2-all-world-paragraph {
+    font-size: 1rem;
+  }
+
+  .rectangle-block-2-all-world-card {
+    padding: 20px 16px;
+  }
+
+  .rectangle-block-2-all-world-card-number {
+    font-size: 1.75rem;
+  }
+
+  .history-company-and-timeline {
+    padding: 0 16px;
+  }
+
+  .history-company-title {
+    font-size: 1.25rem;
+  }
+
+  .history-company-content {
+    font-size: 0.95rem;
+  }
+
+  .timeline-block {
+    padding: 32px 16px 32px 44px;
+  }
+
+  .timeline-card {
+    padding: 20px 16px 20px 20px;
+  }
+
+  .timeline-card::before {
+    left: -24px !important;
+  }
+
+  .optimization-cost .optimization-cost-block {
+    padding: 0 16px;
+  }
+
+  .optimization-cost-title {
+    font-size: 1.25rem;
+  }
+
+  .optimization-cost-text {
+    font-size: 1rem;
+  }
+
+  .optimization-cost-button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }

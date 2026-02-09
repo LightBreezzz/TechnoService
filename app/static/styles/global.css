@@ -1,17 +1,23 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family);
   line-height: var(--line-height-base);
   overflow-x: hidden; /* Защита от горизонтального скролла */
   background-color: #f9fafb;
+  overflow-wrap: break-word; /* Перенос длинных слов на мобильных */
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
-::root {
+:root {
     --font-family: 'Arial', system-ui, sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.6;

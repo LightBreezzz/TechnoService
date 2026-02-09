@@ -168,6 +168,13 @@
     }
 }
 
+@media (max-width: 768px) {
+    .main-header .header {
+        padding-left: max(16px, 4vw);
+        padding-right: max(16px, 4vw);
+    }
+}
+
 /* Мобильное меню */
 .mobile-menu-overlay{
   position: fixed;
